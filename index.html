@@ -140,6 +140,11 @@
     </section>
   </main>
 
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
   <footer>
       <div class="col">
 
@@ -156,9 +161,79 @@
       </nav>
       </div>
       <div class="col">
-
+        <div id="newsletter"></div>
       </div>
   </footer>
 
+
+
+
+<script type="text/babel">
+    class UserForm extends React.Component {
+      constructor(props) {
+        super(props);
+		var email = props.email;
+		var emailIsValid = this.validateEmail(email);
+
+        this.state = {email: email, emailValid: emailIsValid};
+
+        this.onEmailChange = this.onEmailChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+		validateEmail(email) {
+        var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
+            if(email.length<1) return 'empty';
+			if(emailPattern.test(email)) return true;
+			return false;
+		}
+		onEmailChange(e) {
+			var val = e.target.value;
+			var valid = this.validateEmail(val);
+			this.setState({email: val, emailValid: valid});
+		}
+
+		handleSubmit(e) {
+			e.preventDefault();
+            if (this.state.emailValid == 'empty') {
+              alert('empty');
+            }else if(this.state.emailValid === true) {
+				alert("Email: " + this.state.email);
+			} else {
+              alert("правильный email");
+            }
+		}
+
+		render() {
+			// цвет границы для поля для ввода имени
+            if (this.state.emailValid == 'empty') {
+              var emailColor = "";
+              var message = "empty";
+            }else if (this.state.emailValid === true) {
+              var emailColor = "green";
+              var message = "green";
+            } else {
+              var emailColor = "red";
+              var message = "red";
+            }
+			return (
+				<div>
+                  <form onSubmit={this.handleSubmit}>
+                      <p>
+						<label>email:</label><br />
+						<input type="text" value={this.state.email}
+							onChange={this.onEmailChange} style={{borderColor:emailColor}} />
+					</p>
+					<input type="submit" value="Отправить" />
+                    <div  style={{borderColor:emailColor}}>{message}  </div>
+                  </form>
+				</div>
+			);
+		}
+    }
+    ReactDOM.render(
+        <UserForm email=""/>,
+        document.getElementById("newsletter")
+    )
+    </script>
 </body>
 </html>
