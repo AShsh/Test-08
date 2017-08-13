@@ -6,13 +6,20 @@
   <meta name="viewport" content="width=device-width">
   <title>SoftGray</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body style="width: 1800px;">
+<!--<body>-->
  <div class="container">
   <header class="header">
     <a href="#" title="back to main page" class="header__logotype">SoftGray</a>
+    <div class="menu__icon">
+      <div class="icon__item line__top"></div>
+      <div class="icon__item line__center"></div>
+      <div class="icon__item line__bottom"></div>
+    </div>
     <nav class="header__menu">
         <a href="#">Products</a>
         <a href="#">Services</a>
@@ -40,57 +47,49 @@
   </section>
 
   <main>
+
     <section class="services">
-       <div class="container">
-          <div class="grid">
+<!--       <div class="container">-->
+          <div class="grid container">
             <div class="col">
-  <!--            <div class="col__title">-->
-                <div class="col__img">
-                  <object type="image/svg+xml" data="img/icon-comment.svg">Your browser does not support SVGs</object>
-                </div>
-                <h5>Consulting</h5>
-  <!--            </div>-->
+              <div class="col__img">
+                <object type="image/svg+xml" data="img/icon-comment.svg">Your browser does not support SVGs</object>
+              </div>
+              <h5>Consulting</h5>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
             </div>
             <div class="col">
-  <!--            <div class="col__title">-->
-                <div class="col__img">
-                  <object type="image/svg+xml" data="img/icon-code.svg">Your browser does not support SVGs</object>
-                </div>
-                <h5>Consulting</h5>
-  <!--            </div>-->
+              <div class="col__img">
+                <object type="image/svg+xml" data="img/icon-code.svg">Your browser does not support SVGs</object>
+              </div>
+              <h5>Consulting</h5>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
             </div>
             <div class="col">
-  <!--            <div class="col__title">-->
-                <div class="col__img">
-                  <object type="image/svg+xml" data="img/icon-design.svg">Your browser does not support SVGs</object>
-                </div>
-                <h5>Consulting</h5>
-  <!--            </div>-->
+              <div class="col__img">
+                <object type="image/svg+xml" data="img/icon-design.svg">Your browser does not support SVGs</object>
+              </div>
+              <h5>Consulting</h5>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
             </div>
             <div class="col">
-  <!--            <div class="col__title">-->
-                <div class="col__img">
-                  <object type="image/svg+xml" data="img/icon-chart.svg">Your browser does not support SVGs</object>
-                </div>
-                <h5>Consulting</h5>
-  <!--            </div>-->
+              <div class="col__img">
+                <object type="image/svg+xml" data="img/icon-chart.svg">Your browser does not support SVGs</object>
+              </div>
+              <h5>Consulting</h5>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
             </div>
           </div>
-        </div>
+<!--        </div>-->
     </section>
-
     <section class="products">
        <div class="container">
           <div class="grid products__description">
@@ -107,7 +106,7 @@
           </div>
         </div>
 
-        <div class="products__example">
+        <div class="grid products__example">
           <div class="col">
            <div class="example__text">
              <p>MAGAZINE PUBLISHING TOOL</p>
@@ -162,68 +161,66 @@
 
     class UserForm extends React.Component {
         constructor(props) {
-        super(props);
-		    var email = props.email;
-		    var emailIsValid = this.validateEmail(email);
+          super(props);
+          var email = props.email;
+          var emailIsValid = this.validateEmail(email);
 
-        this.state = {email: email, emailValid: emailIsValid};
+          this.state = {email: email, emailValid: emailIsValid};
+          this.onEmailChange = this.onEmailChange.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
+        }
 
-        this.onEmailChange = this.onEmailChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
+        validateEmail(email) {
+          var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
 
-		validateEmail(email) {
-      var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
-      if(email.length < 1) return 'empty';
-      if(emailPattern.test(email)) return true;
-      return false;
-		}
+          if (email.length < 1) return 'empty';
+          if (emailPattern.test(email)) return true;
 
-		onEmailChange(e) {
-			var val = e.target.value;
-			var valid = this.validateEmail(val);
-			this.setState({email: val, emailValid: valid});
-		}
+          return false;
+        }
 
-		handleSubmit(e) {
-			e.preventDefault();
-      if (this.state.emailValid == 'empty') {
-        alert('empty');
-      } else if(this.state.emailValid === true) {
-        this.refs.email.value = '';
-        console.log(this.refs.message);
-        this.setState({email: '', emailValid: 'succsess'});
-      } else {
-        alert("правильный email");
-      }
-		}
+        onEmailChange(e) {
+          var val = e.target.value;
+          var valid = this.validateEmail(val);
 
-		render() {
-            if (this.state.emailValid == 'empty') {
-              var errorClass = "";
-              var message = "empty";
-            } else if (this.state.emailValid === 'succsess') {
-              var errorClass = "input--submit";
-              var message = "yeees";
-            } else if (this.state.emailValid === true) {
-              var errorClass = "input--submit";
-              var message = "green";
-            } else {
-              var errorClass = "input--error";
-              var message = "red";
-            }
-			return (
-				<div>
-          <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.email} ref="email"
-              onChange={this.onEmailChange} className={errorClass} />
-                <input type="submit" value="Отправить" />
-                {<MessageInput text={message}/>}
-          </form>
-				</div>
-			);
-		}
+          this.setState({email: val, emailValid: valid});
+        }
+
+        handleSubmit(e) {
+          e.preventDefault();
+
+          if(this.state.emailValid === true) {
+            this.setState({email: '', emailValid: 'succsess'});
+          }
+        }
+
+        render() {
+          if (this.state.emailValid == 'empty') {
+            var errorClass = "";
+          } else if (this.state.emailValid === 'succsess') {
+            var errorClass = "input--submit",
+                message = "You subscribed to our newsletter";
+          } else if (this.state.emailValid === true) {
+            var errorClass = "input--submit",
+                message = "";
+          } else {
+            var errorClass = "input--error",
+                message = "Please enter a valid email address.";
+          }
+
+          return (
+            <div>
+              <form onSubmit={this.handleSubmit}>
+              <input type="text" value={this.state.email} ref="email"
+                  onChange={this.onEmailChange} className={errorClass} />
+                    <input disabled={!this.state.emailValid} type="submit" value="Отправить" />
+                    {<MessageInput text={message}/>}
+              </form>
+            </div>
+          );
+		    }
     }
+
     ReactDOM.render(
         <UserForm email=""/>,
         document.getElementById("newsletter")
@@ -260,5 +257,13 @@
           </div>
       </div>
   </footer>
+  <script>
+  $('.menu__icon').click(function(){
+    $('body').toggleClass('menu__open');
+  })
+  $('.header__menu a').click(function () {
+      $('body').removeClass('menu__open');
+  })
+  </script>
 </body>
 </html>
