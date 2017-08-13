@@ -153,23 +153,32 @@
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
 <script type="text/babel">
+
+   var MessageInput = React.createClass({
+        render: function(){
+        return <span ref="message" className="input-decorator__errormsg">{this.props.text}</span>
+      }
+    });
+
     class UserForm extends React.Component {
-      constructor(props) {
+        constructor(props) {
         super(props);
-		var email = props.email;
-		var emailIsValid = this.validateEmail(email);
+		    var email = props.email;
+		    var emailIsValid = this.validateEmail(email);
 
         this.state = {email: email, emailValid: emailIsValid};
 
         this.onEmailChange = this.onEmailChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+
 		validateEmail(email) {
-        var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
-            if(email.length<1) return 'empty';
-			if(emailPattern.test(email)) return true;
-			return false;
+      var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
+      if(email.length < 1) return 'empty';
+      if(emailPattern.test(email)) return true;
+      return false;
 		}
+
 		onEmailChange(e) {
 			var val = e.target.value;
 			var valid = this.validateEmail(val);
@@ -178,36 +187,39 @@
 
 		handleSubmit(e) {
 			e.preventDefault();
-            if (this.state.emailValid == 'empty') {
-              alert('empty');
-            }else if(this.state.emailValid === true) {
-				alert("Email: " + this.state.email);
-			} else {
-              alert("правильный email");
-            }
+      if (this.state.emailValid == 'empty') {
+        alert('empty');
+      } else if(this.state.emailValid === true) {
+        this.refs.email.value = '';
+        console.log(this.refs.message);
+        this.setState({email: '', emailValid: 'succsess'});
+      } else {
+        alert("правильный email");
+      }
 		}
 
 		render() {
-			// цвет границы для поля для ввода имени
             if (this.state.emailValid == 'empty') {
-              var emailColor = "";
+              var errorClass = "";
               var message = "empty";
-            }else if (this.state.emailValid === true) {
-              var emailColor = "green";
+            } else if (this.state.emailValid === 'succsess') {
+              var errorClass = "input--submit";
+              var message = "yeees";
+            } else if (this.state.emailValid === true) {
+              var errorClass = "input--submit";
               var message = "green";
             } else {
-              var emailColor = "red";
+              var errorClass = "input--error";
               var message = "red";
             }
 			return (
 				<div>
-                  <form onSubmit={this.handleSubmit}>
-						<input type="text" value={this.state.email}
-							onChange={this.onEmailChange} style={{borderColor:emailColor}} />
-                        <input type="submit" value="Отправить" />
-
-                    <div  style={{borderColor:emailColor}}>{message}  </div>
-                  </form>
+          <form onSubmit={this.handleSubmit}>
+          <input type="text" value={this.state.email} ref="email"
+              onChange={this.onEmailChange} className={errorClass} />
+                <input type="submit" value="Отправить" />
+                {<MessageInput text={message}/>}
+          </form>
 				</div>
 			);
 		}
@@ -216,7 +228,7 @@
         <UserForm email=""/>,
         document.getElementById("newsletter")
     )
-    </script>
+</script>
   <footer>
      <div class="container">
          <div class="grid">
