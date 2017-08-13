@@ -403,7 +403,7 @@ header nav a:hover {
   color: #3498db;
   text-align: center;
 }
-<<<<<<< HEAD
+
 .products .grid{
   align-items: center;
 }
@@ -417,8 +417,7 @@ header nav a:hover {
 
 .products .grid .col{
   width: 50%;
-=======
-
+}
 
 /*footer*/
 
@@ -445,5 +444,12 @@ footer {
 
 .footer__menu li {
     margin-bottom: 7px;
->>>>>>> origin/master
+}
+
+.input--error {
+  background: red;
+}
+
+.input--succsess {
+  background: green;
 }
