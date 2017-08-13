@@ -238,6 +238,13 @@ a:hover {
 main {
   flex: 1;
 }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .container{
   max-width: 1200px;
   width: 100%;
@@ -396,6 +403,7 @@ header nav a:hover {
   color: #3498db;
   text-align: center;
 }
+<<<<<<< HEAD
 .products .grid{
   align-items: center;
 }
@@ -409,4 +417,33 @@ header nav a:hover {
 
 .products .grid .col{
   width: 50%;
+=======
+
+
+/*footer*/
+
+footer {
+    padding: 54px 0;
+}
+
+.footer__logo {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.footer__contact {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.footer__menu {
+    text-transform: uppercase;
+}
+
+.footer__menu li {
+    margin-bottom: 7px;
+>>>>>>> origin/master
 }

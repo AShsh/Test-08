@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body style="
+    width: 1800px;
+">
  <div class="container">
   <header class="header">
     <a href="#" title="back to main page" class="header__logotype">SoftGray</a>
@@ -154,30 +156,6 @@
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
-
-  <footer>
-      <div class="col">
-
-      </div>
-      <div class="col">
-        <nav class="footer__menu">
-        <ul>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Jobs</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      </div>
-      <div class="col">
-        <div id="newsletter"></div>
-      </div>
-  </footer>
-
-
-
-
 <script type="text/babel">
     class UserForm extends React.Component {
       constructor(props) {
@@ -228,12 +206,10 @@
 			return (
 				<div>
                   <form onSubmit={this.handleSubmit}>
-                      <p>
-						<label>email:</label><br />
 						<input type="text" value={this.state.email}
 							onChange={this.onEmailChange} style={{borderColor:emailColor}} />
-					</p>
-					<input type="submit" value="Отправить" />
+                        <input type="submit" value="Отправить" />
+
                     <div  style={{borderColor:emailColor}}>{message}  </div>
                   </form>
 				</div>
@@ -245,5 +221,36 @@
         document.getElementById("newsletter")
     )
     </script>
+  <footer>
+     <div class="container">
+         <div class="grid">
+             <div class="col">
+                <a href="#" class="footer__logo">SOFTGRAY Inc.</a>
+                <ul class="footer__contact">
+                    <li>1600 Amphitheatre Parkway</li>
+                    <li>Mountain View</li>
+                    <li>CA 94043</li>
+                    <li><a href="#">00-000-0000</a></li>
+                    <li><a href="#">sunrise@sunrise.io</a></li>
+                </div>
+
+          <div class="col">
+            <nav class="footer__menu">
+            <ul>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          </div>
+          <div class="col">
+            <div id="newsletter"></div>
+          </div>
+         </div>
+          </div>
+      </div>
+  </footer>
 </body>
 </html>
