@@ -58,9 +58,6 @@ a:hover {
   outline: 0;
 }
 
-p{
-    margin-top: 0;
-}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -236,6 +233,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+input {
+  border: none;
+  padding: 7px 15px;
 }
 
 main {
@@ -553,6 +555,15 @@ font-size:2.286em;
 }
 */
 
+
+
+
+/*****************************************************newsletter*******************************************************/
+
+
+
+
+
 /*****************************************************footer*******************************************************/
 
 footer {
@@ -576,16 +587,15 @@ footer {
     text-transform: uppercase;
 }
 
-.footer__menu li {
+.footer__menu a {
+    display: block;
     margin-bottom: 7px;
 }
 
-.input--error {
-  background: red;
-}
-
-.input--succsess {
-  background: green;
+.footer__title {
+  margin: 0 0 9px;
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
 /*******************************************media********************************/
@@ -596,6 +606,15 @@ footer {
    justify-content: space-around;
 /*    text-align: center;*/
   }
+
+.input--error {
+  background: red;
+}
+
+.input--succsess {
+  background: green;
+}
+
 /*header*/
   .header__phone {
     flex: 2;
@@ -614,6 +633,7 @@ footer {
   .menu__icon{
     display: block;
     position: absolute;
+    cursor: pointer;
   }
   .header__menu{
     flex-direction: column;
