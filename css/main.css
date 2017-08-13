@@ -238,6 +238,13 @@ a:hover {
 main {
   flex: 1;
 }
+.container{
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 main section:nth-child(odd) {
   background-color: #eeeeee;
@@ -252,10 +259,12 @@ footer {
 }
 
 section {
+/*
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 135px 315px;
+*/
+  padding: 135px 0;
 }
 
 @media (max-width: 1000px) {
@@ -280,7 +289,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 15px 315px;
+  padding: 15px 0;
 }
 
 .header__logotype {
@@ -356,9 +365,11 @@ header nav a:hover {
   flex-basis: 23%;
 }
 
+/*
 .services .grid .col__title {
   text-align: center;
 }
+*/
 
 .services .grid .col object {
   width: 50px;
@@ -374,11 +385,13 @@ header nav a:hover {
   border-radius: 100px;
   width: 100px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
+  text-align: center;
 }
 
 .services .grid .col h5 {
   margin: 15px 0;
   font-size: 21px;
   color: #3498db;
+  text-align: center;
 }
