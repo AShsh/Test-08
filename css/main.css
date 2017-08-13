@@ -465,7 +465,7 @@ header nav a:hover {
   padding: 92px 0;
 }
 
-.products .products__description .col{
+.products__description .col{
   width: 50%;
 /*
   max-width: 570px;
@@ -477,7 +477,7 @@ header nav a:hover {
 .products__info h2{
   font-weight: 900;
   font-size: 3.000em;
-    text-transform: uppercase;
+  text-transform: uppercase;
   line-height: 36px;
 }
 
@@ -488,7 +488,7 @@ header nav a:hover {
 
 .products__info .products__button{
     font-size:1.143em;
-  font-weight: 700;
+   font-weight: 700;
     background: #f5f5f5;
     padding: 15px 90px;
     border: none;
@@ -507,53 +507,52 @@ header nav a:hover {
 }
 
 .products__example{
-      justify-content: inherit;
+/*  justify-content: inherit;*/
 }
 
 .products__example .col{
   flex: 1;
-    position: relative;
-    min-height: 280px;
+  position: relative;
+  min-height: 280px;
   background: #ffffff;
-    transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
  .products__example .col:hover{
-     color: #ffffff;
+    color: #ffffff;
     background: #000000;
     transition: 0.3s ease-in;
 }
 .products__example .example__text{
     text-align: center;
     font-weight: 900;
+    padding-top: 13px;
+        line-height: 36px;
 }
 
 
 .products__example .example__text p{
     font-size:0.857em;
+    line-height: 36px;
+    margin-bottom: 0;
 }
 
 .products__example .example__text h3{
 font-size:2.286em;
+    margin-top: 0;
 }
 
 .products__example .example__img{
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 
 }
 .products__example .example__img img{
     width: 80%;
     vertical-align: bottom;
 }
-
-/*
-.products .grid .col{
-  width: 50%;
-}
-*/
 
 
 
@@ -621,12 +620,24 @@ footer {
   }
 /*services*/
   .services .grid .col{
-    margin-bottom: 20px;
+    margin: 0  10px 20px;
   }
-/*services*/
   .services  .col__text{
     text-align: center;
   }
+/*product*/
+    .products__description .col {
+     width: 100%;
+    max-width: 340px;
+}
+/*
+    .products__text{
+        text-align: center;
+    }
+*/
+    .products__info .products__button{
+        margin-bottom: 15px;
+    }
 }
 @media (max-width: 768px) {
 /*header*/
@@ -653,6 +664,13 @@ footer {
   .header__phone{
     text-align: center;
   }
+/*product*/
+    .products__description{
+        text-align: center;
+    }
+    .products__example {
+    flex-direction: column;
+}
 }
 @media (max-width: 480px) {
 /*header*/
@@ -661,12 +679,6 @@ footer {
   }
   .menu__icon{
         top: 37px;
-  }
-  .header__menu{
-  }
-  .header__menu a{
-  }
-  .header__phone{
   }
 }
 
