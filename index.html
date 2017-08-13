@@ -196,15 +196,15 @@
 
         render() {
           if (this.state.emailValid == 'empty') {
-            var errorClass = "";
+            var stageClass = "";
           } else if (this.state.emailValid === 'succsess') {
-            var errorClass = "input--submit",
+            var stageClass = "input--success",
                 message = "You subscribed to our newsletter";
           } else if (this.state.emailValid === true) {
-            var errorClass = "input--submit",
+            var stageClass = "input--success",
                 message = "";
           } else {
-            var errorClass = "input--error",
+            var stageClass = "input--error",
                 message = "Please enter a valid email address.";
           }
 
@@ -212,7 +212,7 @@
             <div>
               <form onSubmit={this.handleSubmit}>
               <input type="text" value={this.state.email} ref="email"
-                  onChange={this.onEmailChange} className={errorClass} />
+                  onChange={this.onEmailChange} className={stageClass} />
                     <input disabled={!this.state.emailValid} type="submit" value="Отправить" />
                     {<MessageInput text={message}/>}
               </form>
