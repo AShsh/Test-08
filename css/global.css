@@ -1,0 +1,108 @@
+/***************GLOBAL START***************/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #313131;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.57;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input {
+  padding: 7px 15px;
+  border: none;
+}
+
+.logotype {
+  color: #000000;
+  transition: 0.2s;
+}
+
+.logotype:hover {
+  color: #6c6c6c;
+  text-decoration: none;
+  text-shadow: 0px 0px 2px #6c6c6c;
+}
+
+.message {
+  margin: 0;
+  transition: 0.2s;
+}
+
+.input--error {
+  outline: none;
+}
+
+.input--error:focus {
+  box-shadow: 0px 0px 3px 1px rgba(158, 27, 27, 1);
+}
+
+.input--success {
+  outline: none;
+}
+
+.input--success:focus {
+  box-shadow: 0px 0px 3px 1px rgb(52, 152, 219);
+}
+
+.input--error+input[type="submit"] {
+  border-bottom: 2px solid red;
+}
+
+.input--error+input[type="submit"]+.message {
+  color: #650000;
+}
+
+.input--success+input[type="submit"] {
+  border-bottom: 2px solid green;
+}
+
+.input--success+input[type="submit"]+.message {
+  color: #2182c3;
+}
+
+/*grid start*/
+
+main {
+  flex: 1;
+}
+
+main section {
+  background-color: #eeeeee;
+}
+
+main section:nth-child(even) {
+  background-color: #e5e5e5;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+/*grid end*/
+
+/***************GLOBAL END***************/

@@ -1,0 +1,101 @@
+/***************HEADER START***************/
+
+header {
+  display: flex;
+  padding: 15px 0;
+  background: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logotype {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 26px;
+  flex: 1;
+}
+
+.header__menu {
+  display: flex;
+  text-transform: uppercase;
+  flex: 4;
+  justify-content: flex-end;
+}
+
+header nav a {
+  margin: 0 18px;
+}
+
+header nav a:hover {
+  text-decoration: none;
+  text-shadow: 1px 0 0 #000;
+}
+
+
+/*burger icon start*/
+
+input.menu__icon {
+  display: none;
+}
+
+label.menu__icon {
+  position: absolute;
+  right: 20px;
+  z-index: 3;
+  display: none;
+  width: 28px;
+  border-bottom: 4px solid #000;
+  cursor: pointer;
+  transition: border-color 2s ease-in;
+}
+
+label.menu__icon:before {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  border-bottom: 4px solid #000000;
+  content: "";
+  transition: transform 0.5s ease-in, border-color 1s ease-in;
+}
+
+label.menu__icon:after {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  border-bottom: 4px solid #000000;
+  content: "";
+  transition: transform 0.5s ease-in , border-color 1s ease-in;
+}
+
+input.menu__icon:checked~label.menu__icon {
+  border-color: #fff;
+  transition: border-color 1s ease-in;
+}
+
+input.menu__icon:checked~label.menu__icon:before {
+  border-color: #fff;
+  transition: transform 0.5s ease-in, border-color 1s ease-in;
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+}
+
+input.menu__icon:checked~label.menu__icon:after {
+  border-color: #fff;
+  transition: transform 0.5s ease-in, border-color 1s ease-in;
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+}
+
+input.menu__icon:checked~.header__menu {
+  left: 0;
+  transition: left 0.3s ease-out;
+}
+
+/*burger icon end*/
+
+.header__phone {
+  text-align: right;
+  font-weight: 900;
+  font-size: 16px;
+  flex: 1;
+}
+
+/***************HEADER END***************/

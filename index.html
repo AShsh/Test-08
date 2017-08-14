@@ -3,10 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SoftGray</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/products.css">
+
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -14,12 +20,14 @@
 <body>
  <div class="container">
   <header class="header">
-    <a href="#" title="back to main page" class="header__logotype">SoftGray</a>
-    <div class="menu__icon">
-      <div class="icon__item line__top"></div>
-      <div class="icon__item line__center"></div>
-      <div class="icon__item line__bottom"></div>
-    </div>
+   <div class="header__logotype">
+     <a href="#" title="back to main page" class="logotype">SoftGray</a>
+   </div>
+   <!--todo-->
+    <input class="menu__icon" id="menu-check" type="checkbox">
+    <label class="menu__icon" for="menu-check"></label>
+
+
     <nav class="header__menu">
         <a href="#">Products</a>
         <a href="#">Services</a>
@@ -28,14 +36,14 @@
         <a href="#">Contact</a>
     </nav>
     <div class="header__phone">
-      <a href="#">+81-00-0000-0000</a>
+      <a href="tel:81-00-0000-0000">+81-00-0000-0000</a>
     </div>
   </header>
  </div>
 
   <section class="hero">
      <div class="container">
-        <h1 class="hero__title">Creative Solutions</h1>
+        <h1>Creative Solutions</h1>
         <div class="hero__text">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p>Vestibulum at orci nulla.</p>
@@ -49,13 +57,13 @@
   <main>
 
     <section class="services">
-<!--       <div class="container">-->
-          <div class="grid container">
+       <div class="container">
+          <div class="grid">
             <div class="col">
               <div class="col__img">
                 <object type="image/svg+xml" data="img/icon-comment.svg">Your browser does not support SVGs</object>
               </div>
-              <h5>Consulting</h5>
+              <h4>Consulting</h4>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
@@ -64,7 +72,7 @@
               <div class="col__img">
                 <object type="image/svg+xml" data="img/icon-code.svg">Your browser does not support SVGs</object>
               </div>
-              <h5>Consulting</h5>
+              <h4>Developing</h4>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
@@ -73,7 +81,7 @@
               <div class="col__img">
                 <object type="image/svg+xml" data="img/icon-design.svg">Your browser does not support SVGs</object>
               </div>
-              <h5>Consulting</h5>
+              <h4>Designing</h4>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
@@ -82,35 +90,35 @@
               <div class="col__img">
                 <object type="image/svg+xml" data="img/icon-chart.svg">Your browser does not support SVGs</object>
               </div>
-              <h5>Consulting</h5>
+              <h4>Analysis</h4>
               <div class="col__text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. Curabitur tristique quam tellus, nec sodales lectus pellentesque in. </p>
               </div>
             </div>
           </div>
-<!--        </div>-->
+        </div>
     </section>
     <section class="products">
        <div class="container">
           <div class="grid products__description">
-            <div class="col products__info">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h2 class="products__title">Lorem ipsum</h2>
-            <p class="products__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. </p>
-            <button class="products__button">View more</button>
+            <div class="col description__text">
+              <p class="description__text--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <div class="description__info">
+                <h2>Lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor. </p>
+              </div>
+            <button>View more</button>
           </div>
-          <div class="col">
-           <div class="products__img">
+          <div class="col description__img">
              <img src="img/laptop.png" alt="image-description">
-           </div>
           </div>
         </div>
 
         <div class="grid products__example">
           <div class="col">
            <div class="example__text">
-             <p>MAGAZINE PUBLISHING TOOL</p>
-             <h3>THE NEWS</h3>
+             <p>Magazine publishing tool</p>
+             <h3>The news</h3>
            </div>
             <div class="example__img">
               <img src="img/img01.png" alt="image-description">
@@ -119,8 +127,8 @@
 
           <div class="col">
            <div class="example__text">
-             <p>MAGAZINE PUBLISHING TOOL</p>
-             <h3>THE NEWS</h3>
+             <p>Digital book publishing tool</p>
+             <h3>Libro</h3>
            </div>
             <div class="example__img">
               <img src="img/img01.png" alt="image-description">
@@ -129,8 +137,8 @@
 
           <div class="col">
            <div class="example__text">
-             <p>MAGAZINE PUBLISHING TOOL</p>
-             <h3>THE NEWS</h3>
+             <p>Front editor</p>
+             <h3>Elite</h3>
            </div>
             <div class="example__img">
               <img src="img/img01.png" alt="image-description">
@@ -142,95 +150,41 @@
 
     <section class="news">
       <div class="container">
-
+        <div class="grid">
+          <div class="col">
+            <div class="news__title">
+              <h5>Latest News</h5>
+              <a href="#" class="see-all">See all news</a>
+            </div>
+            <div class="news__post">
+              <div class="post__img">
+                <img src="#" alt="">
+                <div class="post__date">
+                  <p>October 30, 2014</p>
+                </div>
+              </div>
+              <div class="post">
+                <h5 class="post__title">Lorem ipsum dolor sit amet</h5>
+                <div class="post__text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci nulla. Quisque fermentum nisi sed eros aliquet, nec pulvinar justo iaculis. Duis at facilisis metus. Sed id erat tortor.</p>
+                  <a href="#" class="read-more">...Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
       </div>
     </section>
   </main>
 
 
-<script src="https://unpkg.com/react@15/dist/react.js"></script>
-<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
-<script type="text/babel">
-
-   var MessageInput = React.createClass({
-        render: function(){
-        return <p ref="message" className="message">{this.props.text}</p>
-      }
-    });
-
-    class UserForm extends React.Component {
-        constructor(props) {
-          super(props);
-          var email = props.email;
-          var emailIsValid = this.validateEmail(email);
-
-          this.state = {email: email, emailValid: emailIsValid};
-          this.onEmailChange = this.onEmailChange.bind(this);
-          this.handleSubmit = this.handleSubmit.bind(this);
-        }
-
-        validateEmail(email) {
-          var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
-
-          if (email.length < 1) return 'empty';
-          if (emailPattern.test(email)) return true;
-
-          return false;
-        }
-
-        onEmailChange(e) {
-          var val = e.target.value;
-          var valid = this.validateEmail(val);
-
-          this.setState({email: val, emailValid: valid});
-        }
-
-        handleSubmit(e) {
-          e.preventDefault();
-
-          if(this.state.emailValid === true) {
-            this.setState({email: '', emailValid: 'succsess'});
-          }
-        }
-
-        render() {
-          if (this.state.emailValid == 'empty') {
-            var stageClass = "";
-          } else if (this.state.emailValid === 'succsess') {
-            var stageClass = "input--success",
-                message = "You subscribed to our newsletter";
-          } else if (this.state.emailValid === true) {
-            var stageClass = "input--success",
-                message = "";
-          } else {
-            var stageClass = "input--error",
-                message = "Please enter a valid email address.";
-          }
-
-          return (
-            <div>
-              <form onSubmit={this.handleSubmit}>
-              <input type="text" value={this.state.email} ref="email"
-                  onChange={this.onEmailChange} className={stageClass} />
-                    <input disabled={!this.state.emailValid} type="submit" value="Отправить" />
-                    {<MessageInput text={message}/>}
-              </form>
-            </div>
-          );
-		    }
-    }
-
-    ReactDOM.render(
-        <UserForm email=""/>,
-        document.getElementById("newsletter")
-    )
-</script>
   <footer>
     <div class="container">
       <div class="grid">
         <div class="col">
-          <a href="#" class="footer__logo">SOFTGRAY Inc.</a>
+          <a href="#" class="footer__logotype logotype">SOFTGRAY Inc.</a>
           <ul class="footer__contact">
             <li>1600 Amphitheatre Parkway</li>
             <li>Mountain View</li>
@@ -271,13 +225,82 @@
     </div>
   </footer>
 
-  <script>
-  $('.menu__icon').click(function(){
-    $('body').toggleClass('menu__open');
-  })
-  $('.header__menu a').click(function () {
-      $('body').removeClass('menu__open');
-  })
-  </script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+<script type="text/babel">
+ var MessageInput = React.createClass({
+      render: function(){
+      return <p ref="message" className="message">{this.props.text}</p>
+    }
+  });
+
+  class UserForm extends React.Component {
+      constructor(props) {
+        super(props);
+        var email = props.email;
+        var emailIsValid = this.validateEmail(email);
+
+        this.state = {email: email, emailValid: emailIsValid};
+        this.onEmailChange = this.onEmailChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+
+      validateEmail(email) {
+        var emailPattern = /(.+)@(.+){2,}\.(.+){2,}/;
+
+        if (email.length < 1) return 'empty';
+        if (emailPattern.test(email)) return true;
+
+        return false;
+      }
+
+      onEmailChange(e) {
+        var val = e.target.value;
+        var valid = this.validateEmail(val);
+
+        this.setState({email: val, emailValid: valid});
+      }
+
+      handleSubmit(e) {
+        e.preventDefault();
+
+        if(this.state.emailValid === true) {
+          this.setState({email: '', emailValid: 'succsess'});
+        }
+      }
+
+      render() {
+        if (this.state.emailValid == 'empty') {
+          var stageClass = "input--empty";
+        } else if (this.state.emailValid === 'succsess') {
+          var stageClass = "input--success",
+              message = "You subscribed to our newsletter";
+        } else if (this.state.emailValid === true) {
+          var stageClass = "input--success",
+              message = "";
+        } else {
+          var stageClass = "input--error",
+              message = "Please enter a valid email address.";
+        }
+
+        return (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+            <input type="text" value={this.state.email} ref="email"
+                onChange={this.onEmailChange} className={stageClass} />
+                  <input disabled={!this.state.emailValid} type="submit" value="Отправить" />
+                  {<MessageInput text={message}/>}
+            </form>
+          </div>
+        );
+          }
+  }
+
+  ReactDOM.render(
+      <UserForm email=""/>,
+      document.getElementById("newsletter")
+  )
+</script>
 </body>
 </html>

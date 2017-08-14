@@ -1,0 +1,39 @@
+/***************SERVICES START***************/
+
+.services {
+  padding: 92px 0 63px;
+}
+
+.services .col {
+  max-width: 270px;
+}
+
+.services .col object {
+  width: 40px;
+}
+
+.services .col__img {
+  display: flex;
+  margin: auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+  background-color: #3498db;
+
+  justify-content: center;
+}
+
+.services .col h4 {
+  margin: 15px 0 20px;
+  color: #3498db;
+  text-align: center;
+  font-size: 21px;
+}
+
+.services .col__text {
+  text-align: justify;
+  word-spacing: -1px;
+  line-height: 1.75;
+}
+
+/***************SERVICES START***************/
