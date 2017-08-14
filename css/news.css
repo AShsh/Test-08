@@ -1,7 +1,7 @@
 /***************NEWS START***************/
 
 .news {
-  padding: 69px 0 0 0;
+  padding: 50px 0 88px;
 }
 
 .news .col {
@@ -11,7 +11,7 @@
 .news .news__title {
   position: relative;
   display: flex;
-  margin-bottom: 35px;
+  margin: 15px 0 35px;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 2;
@@ -47,6 +47,8 @@
 .post__img {
   position: relative;
   line-height: 0;
+  min-height: 140px;
+  background: #cdcdcd;
 }
 
 .post__img:hover .post__date {
@@ -70,12 +72,13 @@
 }
 
 .post {
-  padding: 0 20px 20px ;
+  padding: 10px 20px 20px ;
 }
 
 .post h5 {
   font-weight: 900;
   color: #3498db;
+  margin: 10px 0 5px;
 }
 
 .post h5 a {

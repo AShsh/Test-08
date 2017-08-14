@@ -213,6 +213,15 @@ table {
   border-spacing: 0;
 }
 
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
 h1{
   font-size: 56px;
 }
