@@ -1,6 +1,6 @@
 /***************PRODUCTS START***************/
 .products {
-  padding: 92px 0;
+  padding: 91px 0;
 }
 
 .products__description .col {
@@ -23,17 +23,17 @@
     margin-top: 15px;
 }
 
-.products__description .description__info {
+.description__info {
   font-size: 18px;
   line-height: 1.5;
   max-width: 475px;
 }
 
-.products__description .description__img {
+.description__img {
   text-align: right;
   align-self: center;
 }
-.products__description .description__img img {
+.description__img img {
  width: 97%;
 }
 
@@ -42,12 +42,12 @@
   padding-top: 47px;
 }
 
-.products__example h3{
+.products__example h3 {
   margin: 0;
 }
 
-.products__example .col  {
-      height: 280px;
+.products__example .col {
+    height: 280px;
     flex: 1;
     background: #fff;
     color: #000;
@@ -61,7 +61,7 @@
   max-width: 60%;
 }
 
-.products__example .col:hover  {
+.products__example .col:hover {
   color: #fff;
   background: #000;
 }

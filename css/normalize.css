@@ -222,7 +222,13 @@ h2{
 h3{
   font-size: 32px;
 }
-h4{}
-h5{}
-h6{}
+h4{
+  font-size: 21px;
+}
+h5{
+  font-size: 18px;
+}
+h6{
+  font-size: 16px;
+}
 /***************NORMALIZE END***************/
